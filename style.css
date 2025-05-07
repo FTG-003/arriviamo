@@ -21,7 +21,7 @@
   }
   
   .hero {
-    background: url('assets/bg.png') no-repeat center center;
+    background: url('assets/bg.webp') no-repeat center center;
     background-size: cover;
     height: 100vh;
     position: relative;
