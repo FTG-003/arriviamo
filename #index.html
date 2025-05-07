@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyragogy - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient-start: #1a1a2e;
+            --bg-gradient-mid: #16213e;
+            --bg-gradient-end: #0f3460;
+            --text-primary: #f0f0f0;
+            --text-secondary: #cccccc;
+            --text-accent: #e0e0e0;
+            --text-footer: #a0a0a0;
+            --link-hover-border: #b0b0b0;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px; /* Base font size */
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-secondary);
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
+            background-attachment: fixed; /* Keep gradient fixed during scroll (if content exceeds viewport) */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem; /* Add padding for smaller screens */
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .content {
+            max-width: 700px; /* Limit content width for readability */
+            width: 100%;
+            animation: fadeIn 1.5s ease-in-out; /* Subtle fade-in */
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem; /* Responsive font size base */
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 60ch; /* Optimal characters per line */
+            margin: 0 auto 2.5em auto; /* Center the paragraph block */
+            color: var(--text-secondary);
+        }
+
+        .contact-link {
+            display: inline-block; /* Allows margin/padding */
+            font-family: var(--font-heading); /* Use heading font for distinction */
+            font-size: 1rem;
+            color: var(--text-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent; /* Placeholder for hover effect */
+            padding-bottom: 3px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+            letter-spacing: 0.03em;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            color: #ffffff; /* Brighter on hover */
+            border-bottom-color: var(--link-hover-border);
+            outline: none; /* Remove focus outline if needed */
+        }
+
+        footer {
+            position: absolute; /* Position at bottom */
+            bottom: 1.5rem;
+            left: 0;
+            right: 0;
+            font-size: 0.85rem;
+            color: var(--text-footer);
+            animation: fadeIn 2s ease-in-out; /* Slightly delayed fade-in */
+        }
+
+        .footer-quote {
+            display: block;
+            margin-bottom: 0.5em;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .contact-link {
+                font-size: 0.95rem;
+            }
+            footer {
+                font-size: 0.8rem;
+                bottom: 1rem;
+            }
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="content">
+        <h1>Pyragogy</h1>
+        <p class="subtitle">
+            Kindling Minds: Where human connection and algorithmic insight weave the future of co-creative learning.
+        </p>
+
+        <a href="mailto:info@pyragogy.org" class="contact-link">info@pyragogy.org</a>
+    </main>
+
+    <footer>
+        <span class="footer-quote">"The future belongs to those who learn, unlearn, and relearn together."</span>
+        © <span id="year"></span> Pyragogy Contributors. Content licensed CC BY-SA 4.0.
+    </footer>
+
+    <script>
+        // Simple script to update the year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
